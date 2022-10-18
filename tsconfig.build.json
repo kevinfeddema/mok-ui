@@ -1,0 +1,31 @@
+{
+  // This config is for emitting declarations (.d.ts) only
+  // Actual .ts source files are transpiled via babel
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es2020", "dom"],
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noEmit": false,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "noErrorTruncation": false,
+    "allowJs": true,
+    "emitDeclarationOnly": true,
+    "outDir": "build",
+    "rootDir": "./src"
+  },
+  "include": ["./src/**/*.ts*"],
+  "exclude": ["src/**/*.spec.ts*", "src/**/*.test.ts*",  "**/build", "**/node_modules"],
+  "references": [
+    { "path": "../mui-base/tsconfig.build.json" },
+    { "path": "../mui-system/tsconfig.build.json" }
+  ]
+}
+
+
